@@ -1,1 +1,6 @@
-<p>receipt-list works!</p>
+<div *ngFor="let receipt of receipts">
+  <h3>{{ receipt.restaurantName }}</h3>
+  <p>{{ receipt.date }}</p>
+  <p>Total: {{ receipt.totalAmount }}</p>
+  <button (click)="deleteReceipt(receipt.id)">Delete</button>
+</div>
