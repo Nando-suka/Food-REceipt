@@ -6,7 +6,6 @@ import { ReceiptListComponent } from './features/receipts/components/receipt-lis
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
     ReceiptFormComponent,
     ReceiptListComponent
   ],

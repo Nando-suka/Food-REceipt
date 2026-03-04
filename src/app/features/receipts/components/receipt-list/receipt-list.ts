@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ReceiptService } from '../../../../core/services/receipt.service';
 import { Receipt } from '../../models/receipt.model';
-import { NgForOf } from "../../../../../../node_modules/@angular/common/types/_common_module-chunk";
 @Component({
   selector: 'app-receipt-list',
-  imports: [NgForOf],
+  imports: [CommonModule],
   templateUrl: './receipt-list.html',
   styleUrl: './receipt-list.css',
 })
