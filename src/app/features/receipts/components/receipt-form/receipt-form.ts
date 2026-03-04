@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './receipt-form.html',
   styleUrl: './receipt-form.css',
 })
-export class ReceiptForm {
+export class ReceiptFormComponent {
   receiptForm: FormGroup;
 
   constructor(
