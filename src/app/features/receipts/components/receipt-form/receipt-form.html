@@ -1,1 +1,18 @@
-<p>receipt-form works!</p>
+<form [formGroup]="receiptForm" (ngSubmit)="submit()">
+
+  <input formControlName="restaurantName" placeholder="Restaurant Name" />
+  <input type="date" formControlName="date" />
+
+  <div formArrayName="items">
+    <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i">
+      <input formControlName="name" placeholder="Item Name" />
+      <input type="number" formControlName="quantity" />
+      <input type="number" formControlName="price" />
+      <button type="button" (click)="removeItem(i)">Remove</button>
+    </div>
+  </div>
+
+  <button type="button" (click)="addItem()">Add Item</button>
+  <button type="submit">Save Receipt</button>
+
+</form>

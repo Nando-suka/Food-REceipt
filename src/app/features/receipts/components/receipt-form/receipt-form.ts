@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { ReceiptService } from '../../../../core/services/receipt.service';
 import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-receipt-form',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './receipt-form.html',
   styleUrl: './receipt-form.css',
 })
