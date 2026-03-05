@@ -1,0 +1,23 @@
+.receipt-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.receipt-card {
+  background: white;
+  width: 280px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.receipt-card h3 {
+  margin: 0;
+  color: #5a3825;
+}
+
+.receipt-card ul {
+  padding-left: 18px;
+}
