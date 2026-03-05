@@ -1,21 +1,29 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';   // 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { ReceiptService } from '../../../../core/services/receipt.service';
 import { v4 as uuidv4 } from 'uuid';
+
 @Component({
   selector: 'app-receipt-form',
-  imports: [ReactiveFormsModule],
+  standalone: true,
+  imports: [
+    CommonModule,        //
+    ReactiveFormsModule
+  ],
   templateUrl: './receipt-form.html',
-  styleUrl: './receipt-form.css',
+  styleUrl: './receipt-form.css'
 })
 export class ReceiptFormComponent {
+
   receiptForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
     private receiptService: ReceiptService
   ) {
+
     this.receiptForm = this.fb.group({
       restaurantName: ['', Validators.required],
       date: ['', Validators.required],
@@ -33,8 +41,8 @@ export class ReceiptFormComponent {
     this.items.push(
       this.fb.group({
         name: ['', Validators.required],
-        quantity: [1, Validators.required],
-        price: [0, Validators.required]
+        quantity: [1],
+        price: [0]
       })
     );
   }
@@ -44,6 +52,8 @@ export class ReceiptFormComponent {
   }
 
   submit(): void {
+    alert("Receipt berhasil disimpan!");
+
     if (this.receiptForm.invalid) return;
 
     const items = this.receiptForm.value.items;
@@ -61,9 +71,9 @@ export class ReceiptFormComponent {
     };
 
     this.receiptService.addReceipt(newReceipt);
+
     this.receiptForm.reset();
     this.items.clear();
     this.addItem();
-
   }
 }

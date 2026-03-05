@@ -1,5 +1,5 @@
 <h1>Food Receipt Tracker</h1>
 
-<app-receipt-form></app-receipt-form>
-<hr />
-<app-receipt-list></app-receipt-list>
+<app-receipt-form (receiptAdded)="receiptList.loadReceipts()"></app-receipt-form>
+
+<app-receipt-list #receiptList></app-receipt-list>
