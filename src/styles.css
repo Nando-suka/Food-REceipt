@@ -1,3 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+/* === Global Theme === */
 
-@import "tailwindcss";
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdf6ec;
+}
+
+h1 {
+  text-align: center;
+  color: #5a3825;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: #c97b3f;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #a85f2e;
+}
