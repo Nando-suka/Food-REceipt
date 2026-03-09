@@ -52,7 +52,6 @@ export class ReceiptFormComponent {
   }
 
   submit(): void {
-    alert("Receipt berhasil disimpan!");
 
     if (this.receiptForm.invalid) return;
 
