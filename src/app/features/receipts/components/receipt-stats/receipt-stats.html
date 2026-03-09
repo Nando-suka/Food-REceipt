@@ -1,1 +1,34 @@
-<p>receipt-stats works!</p>
+<div class="stats-container">
+
+  <h2>Receipt Statistics</h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h3>Total Receipts</h3>
+      <p>{{ totalReceipts }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Spending</h3>
+      <p>{{ totalSpending }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Average Spending</h3>
+      <p>{{ averageSpending | number:'1.0-0' }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Most Visited Restaurant</h3>
+      <p>{{ mostVisitedRestaurant }}</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Items Purchased</h3>
+      <p>{{ totalItems }}</p>
+    </div>
+
+  </div>
+
+</div>
