@@ -1,1 +1,18 @@
-<p>receipt-item works!</p>
+<div class="receipt-card">
+
+  <h3>{{ receipt.restaurantName }}</h3>
+  <p>{{ receipt.date }}</p>
+
+  <ul>
+    <li *ngFor="let item of receipt.items">
+      {{ item.name }} (x{{ item.quantity }}) - {{ item.price }}
+    </li>
+  </ul>
+
+  <strong>Total: {{ receipt.totalAmount }}</strong>
+
+  <br />
+
+  <button (click)="onDelete()">Delete</button>
+
+</div>

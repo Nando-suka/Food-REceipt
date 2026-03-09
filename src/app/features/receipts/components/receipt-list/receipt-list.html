@@ -1,16 +1,11 @@
 <div class="receipt-container">
-  <div class="receipt-card" *ngFor="let receipt of receipts">
-    <h3>{{ receipt.restaurantName }}</h3>
-    <p>{{ receipt.date }}</p>
+  <div class="receipt-container">
 
-    <ul>
-      <li *ngFor="let item of receipt.items">
-        {{ item.name }} (x{{ item.quantity }}) - {{ item.price }}
-      </li>
-    </ul>
+  <app-receipt-item
+    *ngFor="let receipt of receipts"
+    [receipt]="receipt"
+    (delete)="deleteReceipt($event)">
+  </app-receipt-item>
 
-    <strong>Total: {{ receipt.totalAmount }}</strong>
-    <br />
-    <button (click)="deleteReceipt(receipt.id)">Delete</button>
-  </div>
+</div>
 </div>

@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReceiptService } from '../../../../core/services/receipt.service';
 import { Receipt } from '../../models/receipt.model';
+import { ReceiptItem } from '../receipt-item/receipt-item';
 @Component({
   selector: 'app-receipt-list',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, ReceiptItem],
   templateUrl: './receipt-list.html',
   styleUrl: './receipt-list.css',
 })
