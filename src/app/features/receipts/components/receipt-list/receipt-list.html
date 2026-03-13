@@ -1,11 +1,17 @@
-<div class="receipt-container">
+<div class="receipt-wrapper">
+
+  <h2 class="receipt-title">List Receipt</h2>
+
   <div class="receipt-container">
 
-  <app-receipt-item
-    *ngFor="let receipt of receipts"
-    [receipt]="receipt"
-    (delete)="deleteReceipt($event)">
-  </app-receipt-item>
+    <app-receipt-item
+      *ngFor="let receipt of receipts; let i = index"
+      [receipt]="receipt"
+      [index]="i"
+      (delete)="deleteReceipt($event)"
+      (edit)="editReceipt($event)">
+    </app-receipt-item>
 
-</div>
+  </div>
+
 </div>

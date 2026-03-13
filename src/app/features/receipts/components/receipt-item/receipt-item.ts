@@ -12,11 +12,18 @@ import { Receipt } from '../../models/receipt.model';
 export class ReceiptItem {
 
   @Input() receipt!: Receipt;
+  @Input() index!: number;
 
   @Output() delete = new EventEmitter<string>();
+  @Output() edit = new EventEmitter<Receipt>();
 
   onDelete() {
     this.delete.emit(this.receipt.id);
+  }
+
+  onEdit() {
+    console.log("ITEM EDIT CLICKED");
+    this.edit.emit(this.receipt);
   }
 
 }

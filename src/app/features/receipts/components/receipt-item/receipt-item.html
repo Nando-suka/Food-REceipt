@@ -1,6 +1,10 @@
 <div class="receipt-card">
 
+  <div class="receipt-badge">
+    {{ index + 1 }}
+  </div>
   <h3>{{ receipt.restaurantName }}</h3>
+  <p>Country: {{ receipt.country }}</p>
   <p>{{ receipt.date }}</p>
 
   <ul>
@@ -13,6 +17,7 @@
 
   <br />
 
+  <button (click)="onEdit()">Edit</button>
   <button (click)="onDelete()">Delete</button>
 
 </div>

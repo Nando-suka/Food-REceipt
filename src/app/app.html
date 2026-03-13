@@ -1,7 +1,11 @@
 <h1>Food Receipt Tracker</h1>
 
-<app-receipt-form></app-receipt-form>
+<app-receipt-form
+  [receiptToEdit]="selectedReceipt">
+</app-receipt-form>
+
+<app-receipt-list
+  (edit)="handleEdit($event)">
+</app-receipt-list>
 
 <app-receipt-stats></app-receipt-stats>
-
-<app-receipt-list></app-receipt-list>

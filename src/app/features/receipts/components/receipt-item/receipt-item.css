@@ -4,6 +4,7 @@
   padding: 12px;
   margin-bottom: 12px;
   background: #fafafa;
+  position: relative;
 }
 
 .receipt-card h3 {
@@ -18,4 +19,25 @@ button {
   margin-top: 10px;
   padding: 6px 10px;
   cursor: pointer;
+}
+
+.receipt-badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+
+  background: #ff4d4f;
+  color: white;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 13px;
 }

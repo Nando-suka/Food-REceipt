@@ -23,4 +23,13 @@ export class ReceiptService {
     const receipts = this.getReceipts().filter(r => r.id !== id);
     localStorage.setItem(this.storageKey, JSON.stringify(receipts));
    }
+
+   updateReceipt(updatedReceipt: Receipt): void {
+        const receipts = this.getReceipts();
+        const index = receipts.findIndex(r => r.id === updatedReceipt.id);
+        if (index !== -1) {
+            receipts[index] = updatedReceipt;
+        }
+        localStorage.setItem(this.storageKey, JSON.stringify(receipts));
+    }
 }

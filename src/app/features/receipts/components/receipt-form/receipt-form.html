@@ -1,5 +1,6 @@
 <div class="card">
-  <h2>Add Receipt</h2>
+  <h2 *ngIf="!isEditMode">Add Receipt</h2>
+  <h2 *ngIf="isEditMode">Edit Receipt</h2>
 
   <form [formGroup]="receiptForm" (ngSubmit)="submit()">
 
@@ -21,6 +22,16 @@
         <button type="button" (click)="removeItem(i)">X</button>
       </div>
     </div>
+
+    <label>Country</label>
+
+    <select formControlName="country">
+      <option
+      *ngFor="let country of countries"
+      [value]="country">{{ country }}</option>
+
+      {{ countries }}
+    </select>
 
     <button type="button" (click)="addItem()">+ Add Item</button>
     <br /><br />
