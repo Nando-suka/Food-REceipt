@@ -11,7 +11,7 @@
 
     <div class="stat-card">
       <h3>Total Spending</h3>
-      <p>{{ totalSpending }}</p>
+      <p>{{ totalSpending | number:'1.0-0' }}</p>
     </div>
 
     <div class="stat-card">
@@ -29,6 +29,34 @@
       <p>{{ totalItems }}</p>
     </div>
 
+  </div>
+
+  <!-- Export Buttons Section -->
+  <div class="export-section">
+    <h3>Export Data</h3>
+    <div class="export-buttons">
+      <button 
+        class="btn btn-csv" 
+        (click)="exportAsCSV()"
+        [disabled]="totalReceipts === 0"
+        title="Export data sebagai file CSV untuk di-import ke Excel">
+        <span class="icon">📊</span> Export CSV
+      </button>
+      <button 
+        class="btn btn-pdf" 
+        (click)="exportAsPDF()"
+        [disabled]="totalReceipts === 0 || isExporting"
+        title="Export data sebagai file PDF dengan format yang rapi">
+        <span class="icon">📄</span> {{ isExporting ? 'Generating...' : 'Export PDF' }}
+      </button>
+      <button 
+        class="btn btn-print" 
+        (click)="printReceipts()"
+        [disabled]="totalReceipts === 0"
+        title="Print preview dari semua data receipts">
+        <span class="icon">🖨️</span> Print
+      </button>
+    </div>
   </div>
 
 </div>

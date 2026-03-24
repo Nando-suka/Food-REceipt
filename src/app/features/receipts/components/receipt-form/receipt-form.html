@@ -26,11 +26,11 @@
     <label>Country</label>
 
     <select formControlName="country">
-      <option
-      *ngFor="let country of countries"
-      [value]="country">{{ country }}</option>
+      <option value="">Select Country</option>
 
-      {{ countries }}
+      <option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </option>
     </select>
 
     <button type="button" (click)="addItem()">+ Add Item</button>

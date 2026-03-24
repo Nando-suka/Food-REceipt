@@ -1,11 +1,15 @@
-<h1>Food Receipt Tracker</h1>
+<h1 class="title">Food Receipt Tracker</h1>
 
-<app-receipt-form
-  [receiptToEdit]="selectedReceipt">
-</app-receipt-form>
+<div class="layout">
 
-<app-receipt-list
-  (edit)="handleEdit($event)">
-</app-receipt-list>
+  <div class="left-panel">
+    <app-receipt-form></app-receipt-form>
+  </div>
+
+  <div class="right-panel">
+    <app-receipt-list></app-receipt-list>
+  </div>
+
+</div>
 
 <app-receipt-stats></app-receipt-stats>

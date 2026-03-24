@@ -18,6 +18,7 @@ export class ReceiptItem {
   @Output() edit = new EventEmitter<Receipt>();
 
   onDelete() {
+    console.log("Item Delete Clicked")
     this.delete.emit(this.receipt.id);
   }
 

@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #e6dfd4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* container utama */
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 50px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* kiri */
+.left-panel {
+  width: 100%;
+  min-width: 320px;
+}
+
+/* kanan */
+.right-panel {
+  width: 100%;
+  padding-left: 30px;
+  border-left: 2px solid #d8d1c7 ;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+}
